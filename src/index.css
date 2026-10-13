@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@theme {
+  --color-forest: #183D32;
+  --color-forest-dark: #0e2720;
+  --color-forest-light: #245546;
+  --color-ivory: #F7F4EC;
+  --color-ivory-light: #FDFBF7;
+  --color-beige: #D8C8AC;
+  --color-beige-light: #E7DCB6;
+  --color-charcoal: #222823;
+  --color-charcoal-light: #323933;
+  --color-gold: #B49A67;
+  --color-gold-light: #D4BD8D;
+  --color-gold-dark: #917748;
+
+  --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+@layer base {
+  * {
+    border-color: rgba(180, 154, 103, 0.2);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+    background-color: var(--color-ivory);
+    color: var(--color-charcoal);
+  }
+
+  body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* Custom Luxury Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0e2720;
+}
+::-webkit-scrollbar-thumb {
+  background: #B49A67;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D4BD8D;
+}
+
+/* Subtle cinematic noise overlay utility */
+.noise-overlay {
+  background-image: radial-gradient(rgba(24, 61, 50, 0.4) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Glassmorphism for Luxury UI */
+.glass-dark {
+  background: rgba(14, 39, 32, 0.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(180, 154, 103, 0.22);
+}
+
+.glass-ivory {
+  background: rgba(247, 244, 236, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(216, 200, 172, 0.45);
+}
+
+/* Subtle Shimmer Effect on CTA Buttons */
+@keyframes goldShimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.btn-gold-shimmer {
+  background-size: 200% 100%;
+  background-image: linear-gradient(90deg, #B49A67 0%, #D4BD8D 50%, #B49A67 100%);
+  transition: all 0.4s ease;
+}
+.btn-gold-shimmer:hover {
+  animation: goldShimmer 2.5s infinite linear;
+}
